@@ -1,5 +1,5 @@
 name: second-workflow
-on:[push, pull_request]
+on: [push, pull_request]
 jobs:
   check-python-version:
     runs-on: ubuntu-latest

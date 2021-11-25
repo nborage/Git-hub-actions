@@ -1,0 +1,19 @@
+name: second-workflow
+on:[push, pull_request]
+ jobs:
+  check-python-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - run: |
+          python --version
+      - run: |
+          pipenv --python 3.9
+          pipenv install nose pylint --dev
+      - run: |
+        pipenv run pylint app
+      - run: |
+        pipenv run nosetests

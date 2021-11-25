@@ -1,6 +1,6 @@
 name: second-workflow
 on:[push, pull_request]
- jobs:
+jobs:
   check-python-version:
     runs-on: ubuntu-latest
     steps:

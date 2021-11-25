@@ -15,5 +15,4 @@ jobs:
           pipenv install nose pylint --dev
       - run: |
         pipenv run pylint app
-      - run: |
         pipenv run nosetests
